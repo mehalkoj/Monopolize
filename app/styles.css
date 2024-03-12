@@ -1,0 +1,84 @@
+body {
+    max-width: 1400px;
+    max-height: 1080px;
+}
+ul {
+    list-style-type: none;
+}
+
+#board {
+    margin: auto;
+    width: 100%;
+    padding: 100px;
+}
+
+#top-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+#bottom-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+#board-center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;    display: flex;
+    justify-content: center;
+
+}
+
+#title{
+    width: 300px;
+}
+#title h1{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+#community-chest-station{
+
+
+}
+
+#left-mid-row{
+    display: flex;
+    justify-content: flex-start;
+}
+
+#right-mid-row{
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+#right-top-row {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#right-bottom-row {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#left-bottom-row {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#middle{
+    display: flex;
+    align-items: flex-start;
+}
+
+#buy-modal{
+    display: none;
+    background-color: #BFD7EA;
+    
+}

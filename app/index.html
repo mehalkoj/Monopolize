@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+        <title>Monopoly</title>
+    </head>
+
+    <body>
+        <header id="header">
+        
+        </header>
+
+        <div id="board">
+            <div id="top-row">
+                <span id="free-parking" class="corner-tile tile">Free Parking</span>
+                <span id="kentucky-avenue" class="property-tile tile">Kentucky Avenue</span>
+                <span id="chance" class="chance-tile tile">Chance</span>
+                <span id="indiana-avennue" class="property-tile tile">Indiana Avenue</span>
+                <span id="illinois-avenue" class="property-tile tile">Illinois Avenue</span>
+                <span id="b&o-railroad" class="railroad-tile tile">B & O Railroad</span>
+                <span id="atlantic-avenue" class="property-tile tile">Atlantic Avenue</span>
+                <span id="ventnor-avenue" class="property-tile tile">Ventnor Avenue</span>
+                <span id="water-works" class="utilities-tile tile">Water Works</span>
+                <span id="marvin-gardens" class="property-tile tile">Marvin Gardens</span>
+                <span id="go-to-jail" class="corner-tile tile">Go To Jail</span>
+            </div>
+
+
+            <div id="right-top-row">
+                <ul>
+                    <li><span id="pacific-avenue" class="property-tile tile">Pacific Avenue</span></li>
+                    <li><span id="north-carolina-avenue" class="chance-tile tile">North Carolina Avenue</span></li>
+                    <li><span id="community-chest" class="chest-tile tile">Community Chest</span></li>
+            </ul>
+            </div>
+
+            
+
+            
+            <div id="left-top-row">
+                <ul>
+                    <li><span id="charles-place" class="property-tile tile">St. Charles Place</span></li>
+                    <li><span id="electric-company" class="utilities-tile tile">Electric Company</span></li>
+                    <li><span id="states-avenue" class="property-tile tile">States Avenue</span></li>
+            </ul>
+            </div>
+
+            <div id="buy-modal">
+                <h2 id="buy-modal-text"></h2>
+                <button id="buy-property-btn">Buy Property</button>
+                <button id="pass-property-btn">Pass Property</button>
+            </div>
+
+            <div id="middle">
+                <div id="left-mid-row">
+                    <ul>
+                        <li><span id="virginia-avenue" class="property-tile tile">Virginia Avenue</span></li>
+                        <li><span id="pennsylvania-railroad" class="railroad-tile tile">Pennsylvania Railroad</span></li>
+                        <li><span id="james-place" class="property-tile tile">St. James Place</span></li>
+                </ul>
+                </div>
+
+                
+
+                <div id="board-center">
+                <div id="community-chest-station">
+                    <h4>Community Chest</h4>
+                    <span id="community-chest-deck"></span>
+                </div>
+                <div id="title">
+                    <h1>Monopoly</h1>
+                </div>
+                <div id="chance-card-station">
+                    <h4>Chance Card</h4>
+                    <span id="chance-card-deck"></span>
+                </div>
+            </div>
+
+
+            <div id="right-mid-row">
+                <ul>
+                    <li><span id="pennsylvania-avenue" class="property-tile tile">Pennsylvania Avenue</span></li>
+                    <li><span id="shortline-railroad" class="railroad-tile tile">Short Line</span></li>
+                    <li><span id="chance" class="chance-tile tile">Chance</span></li>
+            </ul>
+            </div>
+        </div>
+
+        <div id="right-bottom-row">
+            <ul>
+                <li><span id="park-place" class="property-tile tile">Park Place</span></li>
+                <li><span id="luxury-tax" class="tax-tile tile">Luxury Tax</span></li>
+                <li><span id="boardwalk" class="property-tile tile">Boardwalk</span></li>
+        </ul>
+        </div>
+
+            <div id="left-bottom-row">
+                <ul>
+                    <li><span id="community-chest" class="chest-tile tile">Community Chest</span></li>
+                    <li><span id="tennessee-avenue" class="property-tile tile">Tennessee Avenue</span></li>
+                    <li><span id="new-york-avenue" class="property-tile tile">New York Avenue</span></li>
+            </ul>
+            </div>
+
+
+
+
+            <div id="bottom-row">
+                <span id="just-visiting" class="corner-tile tile">Just Visiting</span>
+                <span id="in-jail" class="corner-tile tile">In Jail</span>
+                <span id="connecticut-avenue" class="property-tile tile">Connecticut Avenue</span>
+                <span id="vermont-avenue" class="property-tile tile">Vermont Avenue</span>
+                <span id="chance" class="chance-tile tile">Chance</span>
+                <span id="oriental-avenue" class="property-tile tile">Oriental Avenue</span>
+                <span id="reading-railroad" class="railroad-tile tile">Reading Railroad</span>
+                <span id="income-tax" class="tax-tile tile">Income Tax</span>
+                <span id="baltic-avennue" class="property-tile tile">Baltic Avenue</span>
+                <span id="community-chest" class="chest-tile tile">Community Chest</span>
+                <span id="mediterranean" class="property-tile tile">Mediterranean Avenue</span>
+                <span id="go" class="corner-tile tile">GO!</span>
+            </div>
+        </div>
+
+        <button onclick="rollDice()">Roll Dice</button> <!--<button onclick="buyModal()">*TEST* Buy A Property</button> -->
+        <h4 id="dice-output"></h4>
+    <script src="./main.js"></script>
+    </body>
+</html>
