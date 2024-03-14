@@ -105,10 +105,12 @@ function decideStart(){
 
 
 function goToJail(player){
+
     console.log("Gone To Jail!")
     player.playerPOS = 11;
     player.inJail = 1;
 }
+
 
 
 
