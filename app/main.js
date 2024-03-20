@@ -1,5 +1,4 @@
 
-// Oriental Avenue when landed on duplicates like crazy
 
 let board = [{name: null}, {name: "GO!", tileType: "corner"}, {name: "Mediterranean Avenue", tileType: "property", cost: 60, rent: 12, owner: "", houses: 0, hotels: 0}, {name: "Community Chest", tileType: "chest"}, {name: "Baltic Avenue", tileType: "property", cost: 60, rent: 14, owner: "", houses: 0, hotels: 0}, {name: "Income Tax", tileType: "tax", cost: 200}, {name: "Reading Railroad", tileType: "property", special: "railroad", cost: 200, owner: ""}, 
 {name: "Oriental Avenue", tileType: "property", cost: 100, rent: 10, owner: "", houses: 0, hotels: 0}, {name: "Chance", tileType: "chance"}, {name: "Vermont Avenue", tileType: "property", cost: 100, rent: 20, owner: "", houses: 0, hotels: 0}, {name: "Connecticut Avenue", tileType: "property", cost: 120, rent: 22, owner: "", houses: 0, hotels: 0},
@@ -11,17 +10,24 @@ let board = [{name: null}, {name: "GO!", tileType: "corner"}, {name: "Mediterran
 {name: "North Carolina Avenue", tileType: "property", cost: 300, rent: 20, owner: "", houses: 0, hotels: 0}, {name: "Community Chest", tileType: "chest"}, {name: "Pennsylvania", tileType: "property", cost: 320, rent: 20, owner: "", houses: 0, hotels: 0}, {name: "Shortline", tileType: "property", special: "railroad", cost: 200, rent: 20, owner: ""}, {name: "Chance", tileType: "chance"},
 {name: "Park Place", tileType: "property", cost: 350, rent: 20, owner: "", houses: 0, hotels: 0}, {name: "Luxury Tax", tileType: "tax", cost: 75}, {name: "Boardwalk", tileType: "property", cost: 400, rent: 20, owner: "", houses: 0, hotels: 0}];
 
-let players = [{name: "human", turn: false, playerPOS: 0, money: 1500, inJail: 0, freeJail: 0, properties: []}, 
+
+
+let players = [{name: "human", turn: true, color: "#03fca9", playerPOS: 0, money: 1500, inJail: 0, freeJail: 0, properties: []}, 
     {name: "cpu", turn: false, playerPOS: 0, money: 1500, inJail: 0, freeJail: 0, properties: []},
     {name: "cpu1", turn: false, playerPOS: 0, money: 1500, inJail: 0, freeJail: 0, properties: []}];
 
 
-function getCurPlayer(){
-    for (let i = 0; i < players; i++){
-        
-    }
 
-}
+//let turns = decideStart();
+
+function getCurPlayer(){
+        for (let i = 0; i < players.length; i++){
+            if (players[i].turn == true){
+            console.log(players[i])
+            return players[i];
+        }
+    }
+};
 
 
 function passGo(player, move){
@@ -89,16 +95,22 @@ function chance(index, player){
     return 
 }
 
-// param should get the index of board array and not use the player positiong (makes handling auctioning easier)
 function buyProp(index, player){
     player.money -= index.cost;
     const props = player.properties;
     props.push(index);
-    console.log("You Have Purchased " + props[index.name]);
+    console.log(player.properties);
+    console.log("You Have Purchased " + index.name);
     console.log("Your Money Is Now " + player.money);
     document.getElementById("buy-modal").style.display = "none";
+    document.getElementById(board.indexOf(index)).style.borderColor = player.color;
 
 };
+
+function auction(index, player){
+
+     
+}
  
 
 
@@ -114,15 +126,9 @@ function customDice(dice1, dice2){
     return dice
 }
 
-function decideStart(){
-    /*
-    let starting = [{}];
-    for (let i = 0; i < players.length; i++){
-        starting.push(players[i])
-        starting.players[i] = rollDice();
-        console.log("Player: " + players[i] + " Rolled a " + starting.players[i]);
-    } */
-};
+function rollTurnList(){
+    
+}
 
 
 function goToJail(player){
@@ -140,8 +146,8 @@ function goToJail(player){
 }*/
 
 
-function turn(player){
-    player.turn = true;
+function turn(){
+    const player = getCurPlayer();
     let totalTurns = 1;
     const dice = rollDice();
     const sumdice = dice[0] + dice[1];
@@ -157,14 +163,12 @@ function turn(player){
         if (totalTurns == 3){
             return goToJail(player);
         }
-        // Check this later. Should find how many tiles from player position to board[0], then minus it from the dice roll
         if (index > 40 || index == null){
             let diff_to_zero = 40 - player.playerPOS;
             playerMove = dice[0] + dice[1] - diff_to_zero;
             index = board[playerMove];
         };
 
-/// Issue of when a user passes go, regardless of dice roll, it will bne adding 16.
         
         console.log("Turns: " + totalTurns);
         console.log("Dice 1: " + dice[0] + "   Dice 2: " + dice[1]);
@@ -205,7 +209,10 @@ function turn(player){
 
     player.playerPOS = playerMove;
     totalTurns - totalTurns;
-    console.log("Turn Ended")
+    if (totalTurns == 0){
+        player.turns = false;
+        console.log("Turn Ended")
+    }
 };
 
 

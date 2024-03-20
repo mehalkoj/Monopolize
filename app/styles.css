@@ -82,3 +82,19 @@ ul {
     background-color: #BFD7EA;
     
 }
+
+.property-tile{
+    border-width: 2px;
+    border-style: solid;
+}
+
+.railroad-tile{
+    border-width: 2px;
+    border-style: solid;
+}
+
+.utilities-tile{
+    border-width: 2px;
+    border-style: solid;
+}
+

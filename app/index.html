@@ -30,7 +30,7 @@
             <div id="right-top-row">
                 <ul>
                     <li><span id="32" class="property-tile tile">Pacific Avenue</span></li>
-                    <li><span id="33" class="chance-tile tile">North Carolina Avenue</span></li>
+                    <li><span id="33" class="property-tile tile">North Carolina Avenue</span></li>
                     <li><span id="34" class="chest-tile tile">Community Chest</span></li>
             </ul>
             </div>
@@ -50,6 +50,11 @@
                 <h2 id="buy-modal-text"></h2>
                 <button id="buy-property-btn">Buy Property</button>
                 <button id="pass-property-btn">Pass Property</button>
+            </div>
+
+            <div id="auction-modal">
+                <h2 id="auction-property-text"></h2>
+                <h2 id="auction-modal-text"></h2>
             </div>
 
             <div id="middle">
@@ -124,7 +129,7 @@
             </div>
         </div>
 
-        <button onclick="turn(players[0])">Roll Dice</button> <button onclick="testTurn(players[0])">Test Dice</button> <button onclick="decideStart()">Decide Start</button><!--<button onclick="buyModal()">*TEST* Buy A Property</button> -->
+        <button onclick="turn()">Roll Dice</button> <button onclick="testTurn(players[0])">Test Dice</button> <button onclick="decideStart()">Decide Start</button><!--<button onclick="buyModal()">*TEST* Buy A Property</button> -->
         <h4 id="dice-output"></h4>
     <script src="./main.js"></script>
     </body>
