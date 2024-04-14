@@ -30,14 +30,7 @@ function getCurPlayer(){
 };
 
 
-function passGo(player, move){
-    // This is for chance cards that say "Move To Illinois and collect if you pass go"
-    if (player.playerPOS > move){
-        player.money += 200;
-        return player.playerPOS = move;
-    }
 
-}
 
 function pay(scenario, index, player, diceRoll){
     if (scenario == "tax"){
@@ -138,12 +131,12 @@ function goToJail(player){
     player.inJail = 1;
 }
 
-/*function characterMove(index, player){
-    for (let i = player.playerPOS; i < index; i++){
-        let point = document.getElementById(player.playerPOS);
-
-    }
-}*/
+/*
+function movePiece(index){
+    let player = getCurPlayer();
+    let move = board[index]
+    document.getElementById("player-marker").style.
+} */
 
 
 function turn(){
@@ -167,6 +160,9 @@ function turn(){
             let diff_to_zero = 40 - player.playerPOS;
             playerMove = dice[0] + dice[1] - diff_to_zero;
             index = board[playerMove];
+            // Salary For Passing Go
+            player.money += 200;
+            console.log(player.money);
         };
 
         
@@ -184,10 +180,11 @@ function turn(){
                 document.getElementById("buy-modal-text").innerHTML = "Would you like to buy " + index.name + "?";
                 if (player.money > index.cost){
                     document.getElementById("buy-property-btn").onclick = function() {buyProp(index, player)};
+                    document.getElementById("pass-property-btn").onclick = function() {document.getElementById("buy-modal").style.display = "none";
+                };
                 } else {
                     console.log("You Do Not Have Enough Money To Buy This Property.")
                     document.getElementById("buy-property-btn").style.display = "none";
-                    //document.getElementById("pass-property-btn").onclick = auction(index, player);
                 };
             } else if (index.tileType == "chest"){
 
@@ -216,5 +213,30 @@ function turn(){
 };
 
 
+class Board {
+    constructor(){
 
+    }
 
+    init(){
+        const board = document.getElementById("board");
+        const ctx = board.getContext("2d");
+        const img = new Image();
+        img.src = "./monopoly.png"
+        img.onerror = () => console.error("Image loading failed");
+        img.onload = () => {
+        ctx.drawImage(img, 0, 0)
+    }
+
+    
+    }
+}
+
+const x = new Board;
+x.init();
+
+function createBoard(){
+    
+}
+
+createBoard();
